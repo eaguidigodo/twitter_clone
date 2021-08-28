@@ -1,2 +1,94 @@
-<h1>Posts#index</h1>
-<p>Find me in app/views/posts/index.html.erb</p>
+
+    <!-- begining left sidebar-->
+    <div class="left-sidebar">
+        <i class="fab fa-twitter"></i>
+        <div class="menu-list active">
+            <span class="material-icons">home</span>
+            <h2>Home</h2>
+        </div>        
+        
+        <div class="menu-list ">
+            <span class="material-icons">search</span>
+            <h2>Explore</h2>
+        </div>
+
+        <div class="menu-list ">
+            <span class="material-icons">notifications</span>
+            <h2>Notifications</h2>
+        </div>
+
+        <div class="menu-list ">
+            <span class="material-icons">email</span>
+            <h2>Messages</h2>
+        </div>
+
+        <div class="menu-list ">
+            <span class="material-icons">bookmark_border</span>
+            <h2>Bookmarks</h2>
+        </div>
+
+        <div class="menu-list ">
+            <span class="material-icons">list</span>
+            <h2>List</h2>
+        </div>
+
+        <div class="menu-list ">
+            <span class="material-icons">person</span>
+            <h2>Profiles</h2>
+        </div>
+
+        <div class="menu-list ">
+            <span class="material-icons">more_horiz</span>
+            <h2>More</h2>
+        </div>
+
+        <button class="left-sidebar__tweet">tweet</button>
+    </div>
+    <!--End left sidebar-->
+
+    <!--begining content side-->
+    <div class="content">
+        <div class="content__header">
+            <h2>Home</h2>
+        </div>
+        <!--Tweetbox start-->
+        <div class="tweetBox">
+            <form action="/posts" accept-charset="UTF-8" data-remote="true" method="post">
+                <div class="tweetbox__input">
+                <%=image_tag('avatar.jpg') %>
+                    <input type="text" placeholder="What's happening?" name="post[content]"> 
+                </div>
+                <button class="tweetBox__tweetButton" data-disable-with="Create Blog">Tweet</button>
+            </form>
+        </div>
+        <!--tweetbox end-->
+        <!--Posts start-->
+        <div class="post">
+            <div class="post__avatar">
+                <%=image_tag('avatar.jpg') %>
+            </div>
+            <div class="post__body">
+                <div class="post__ header">
+                    <div class="post__headerText">
+                        <h3>
+                            Enselme Anicet
+                        </h3>
+                        <span class="post__headerSpecial">
+                            <span class="material-icons post__badge">verified</span>@Enselme
+                        </span>
+                    </div>
+                    <div class="post__headerDescription"> <p>Hello world!</p>
+                    </div>
+                </div>
+    
+                <div class="post__footer">
+                    <span class="material-icons" %= link_to edit_post_path(post.id) >edit</span>                
+                    <span class="material-icons">delete</span>                
+                </div>
+                </div>
+            </div>
+        </div>
+        </br>
+        <!--Posts end-->
+    </div>
+    <!--end of content side-->
