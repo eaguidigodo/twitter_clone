@@ -6,16 +6,23 @@ class PostsController < ApplicationController
   end
 
   def create 
-    Post.create(post_params)
-    puts "Je suis ici"#{params[:post][:content]}
-    redirect_to posts_index_path
+    @post = Post.new(post_params)
+    if @post.save
+      redirect_to posts_index_path, notice: "Tweet successfully created!"
+    else 
+      render :index
+    end
   end
 
   def edit
   end
 
   def update
-    redirect_to posts_index_path, notice: "Post successfully updated!"
+    if @post.update(post_params)
+      redirect_to posts_index_path, notice: "Post successfully updated!"
+    else
+      render :edit
+    end
   end
 
   def destroy

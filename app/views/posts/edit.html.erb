@@ -7,3 +7,13 @@
     <button class="tweetBox__tweetButton" data-disable-with="">Tweet</button>
 </form>
 </div>
+<% if @post.errors.any? %>
+<div id="error_explanation">
+    <h2><%=@post.errors.count %> There are errors! </h2>
+    <ul>
+      <% @post.errors.full_messages.each do |msg| %>
+        <li><=% msg %></li>
+        <% end %>
+    </ul>
+</div>
+<% end %>
