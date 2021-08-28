@@ -1,0 +1,9 @@
+<div class="tweetBox">
+<form action="/posts" accept-charset="UTF-8" data-remote="true" method="put">
+    <div class="tweetbox__input">
+    <%=image_tag('avatar.jpg') %>
+        <input type="text" placeholder="What's happening?" name="post[content]" value="<%= @post.content%>"> 
+    </div>
+    <button class="tweetBox__tweetButton" data-disable-with="">Tweet</button>
+</form>
+</div>

@@ -78,12 +78,14 @@
                             <span class="material-icons post__badge">verified</span>@Enselme
                         </span>
                     </div>
-                    <div class="post__headerDescription"> <%= post.content %>
-                    </div>
+                    <div class="post__headerDescription"> <%= post.content.gsub(/\n/, '<br/>') %>
                 </div>
     
                 <div class="post__footer">
-                    <span class="material-icons" %= link_to edit_post_path(post.id) >edit</span>                
+                    <%= link_to edit_post_path(post.id) do %>
+                    <span class="material-icons">edit</span>   
+                    <% end %>
+
                     <span class="material-icons">delete</span>                
                 </div>
                 </div>
