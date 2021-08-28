@@ -18,4 +18,10 @@ class PostsController < ApplicationController
     redirect_to posts_index_path, notice: "Post successfully updated!"
   end
 
+  def destroy
+    @post = Post.find(params[:id])
+    @post.destroy
+    redirect_to posts_index_path, notice: "Tweet successfully deleted!"
+  end
+
 end

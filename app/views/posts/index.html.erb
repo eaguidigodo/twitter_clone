@@ -85,8 +85,9 @@
                     <%= link_to edit_post_path(post.id) do %>
                     <span class="material-icons">edit</span>   
                     <% end %>
-
-                    <span class="material-icons">delete</span>                
+                    <%= link_to post_path(post.id), method: :delete do %>
+                    <span class="material-icons">delete</span>      
+                    <% end %>          
                 </div>
                 </div>
             </div>
