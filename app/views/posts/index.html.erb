@@ -64,6 +64,7 @@
         <!--tweetbox end-->
         <!--Posts start-->
         <div class="post">
+        <% @posts.each do |post| %>
             <div class="post__avatar">
                 <%=image_tag('avatar.jpg') %>
             </div>
@@ -77,7 +78,7 @@
                             <span class="material-icons post__badge">verified</span>@Enselme
                         </span>
                     </div>
-                    <div class="post__headerDescription"> <p>Hello world!</p>
+                    <div class="post__headerDescription"> <%= post.content %>
                     </div>
                 </div>
     
@@ -88,6 +89,7 @@
                 </div>
             </div>
         </div>
+        <% end %>
         <!--Posts end-->
     </div>
     <!--end of content side-->
