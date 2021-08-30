@@ -1,21 +1,18 @@
-<p> <%= notice %> </p>
-<div class="tweetBox">
+<h3>Confirm your post please!</h2>
+
 <%= form_with(model: @post, local: true) do |form| %>
+  <%= form.hidden_field :content %>
+  <p><%= @post.content %></p>
+  <%= form.submit  "register" %>
+<% end %>
 
-    <div class="tweetBox">
-      <%= form.text_field :content %>
-    </div>
-    <%= form.submit %>
-  <% end %>
 </div>
-
-
 <% if @post.errors.any? %>
 <div id="error_explanation">
     <h2><%=@post.errors.count %> There are errors! </h2>
     <ul>
       <% @post.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
+        <li><=% msg %></li>
         <% end %>
     </ul>
 </div>

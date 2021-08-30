@@ -48,18 +48,20 @@
 
     <!--begining content side-->
     <div class="content">
+    <p> <%= notice %> </p>
         <div class="content__header">
             <h2>Home</h2>
         </div>
         <!--Tweetbox start-->
         <div class="tweetBox">
-            <form action="/posts" accept-charset="UTF-8" data-remote="true" method="post">
-                <div class="tweetbox__input">
-                <%=image_tag('avatar.jpg') %>
-                    <input type="text" placeholder="What's happening?" name="post[content]"> 
-                </div>
-                <button class="tweetBox__tweetButton" data-disable-with="">Tweet</button>
-            </form>
+
+        <%= form_with(model: @post, local: true, url: confirm_posts_path) do |form| %>
+
+        <div class="tweetBox">
+            <%= form.text_field :content %>
+         </div>
+         <%= form.submit %>
+        <% end %>
         </div>
         <!--tweetbox end-->
         <!--Posts start-->
@@ -82,10 +84,10 @@
                 </div>
     
                 <div class="post__footer">
-                    <%= link_to edit_post_path(post.id) do %>
+                    <%= link_to edit_post_path(post.id), data:{ confirm: 'Edit this tweet?' } do %>
                     <span class="material-icons">edit</span>   
                     <% end %>
-                    <%= link_to post_path(post.id), method: :delete do %>
+                    <%= link_to post_path(post.id), method: :delete, data:{ confirm: 'Delete this tweet?' } do %>
                     <span class="material-icons">delete</span>      
                     <% end %>          
                 </div>
@@ -98,7 +100,7 @@
             <h2><%=@post.errors.count %> There are errors! </h2>
             <ul>
               <% @post.errors.full_messages.each do |msg| %>
-                <li><=% msg %></li>
+                <li><%= msg %></li>
                 <% end %>
             </ul>
         </div>

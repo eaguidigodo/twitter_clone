@@ -15,7 +15,9 @@ class PostsController < ApplicationController
   end
 
   def edit
+
   end
+  
 
   def update
     if @post.update(post_params)
@@ -23,6 +25,10 @@ class PostsController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def confirm
+    @post = Post.new(post_params)
   end
 
   def destroy
