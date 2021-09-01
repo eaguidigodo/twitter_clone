@@ -1,24 +1,9 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a twitter clone app realised when following my courses on ruby on rails in dive into code. It is very consistent so feel free to contribute to improve it!
 
-Things you may want to cover:
+* ruby 2.7.0
 
-* Ruby version
+* rails 5.2.5
 
-* System dependencies
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
